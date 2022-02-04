@@ -4,6 +4,8 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PanelService {
+  total: any;
+  orders: any;
 
   constructor() { }
   addToBudget($event){
@@ -22,7 +24,7 @@ export class PanelService {
       } 
       console.log(this.total)
       console.log(isChecked)
-    });
+    }); 
   }
   
   
