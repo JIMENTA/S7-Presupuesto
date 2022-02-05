@@ -1,2 +1,9 @@
-<div>Numeros de pagina: <button>+</button> <input type="number"> <button>-</button></div>
-<div>Numeros de pagina: <button>+</button> <input type="number"> <button>-</button></div>
+<form [formGroup]="cantidadesForm" (ngSubmit)="calculoExtras(cantidadesForm.value)">
+    <div>
+        <label>Cantidad de pagina: </label>
+        <button type="submit">+</button> <input formControlName="paginas" type="text"><button>-</button> </div>
+    <div>
+        <label>Cantidad de idiomas: </label>
+        <button type="submit">+</button> <input formControlName="idiomas" type="text"><button>-</button>
+    </div>
+</form>

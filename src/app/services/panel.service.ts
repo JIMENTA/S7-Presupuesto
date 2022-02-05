@@ -4,27 +4,31 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class PanelService {
-  total: any;
-  orders: any;
+  total = 0;
 
   constructor() { }
+
+
   addToBudget($event){
-    // this.myPanelService.calcular($event)
-
-    const id = $event.target.value;
-    const isChecked = $event.target.checked;
-
-    this.orders.map((element) =>{
     
-      if(element.id == id &&  element.selected !== isChecked){
-        this.total +=element.price
-      }
-      if(element.id == id &&  element.selected === isChecked){
-        this.total -=element.price
-      } 
-      console.log(this.total)
-      console.log(isChecked)
-    }); 
+
+
+    console.log($event.checked)
+    // const id = $event.target.value;
+    // const isChecked = $event.target.checked;
+
+    // this.orders.map((element) =>{
+    
+    //   if(element.id == id &&  element.selected !== isChecked){
+    //     this.total +=element.price
+    //   }
+    //   if(element.id == id &&  element.selected === isChecked){
+    //     this.total -=element.price
+    //   } 
+    //   console.log(this.total)
+    //   console.log(isChecked)
+    // }); 
+
   }
   
   

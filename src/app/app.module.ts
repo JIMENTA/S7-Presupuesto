@@ -4,10 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CalculoComponent } from './components/calculo/calculo.component';
+import { InicioComponent } from './components/inicio/inicio.component';
 
 
 
@@ -15,12 +16,14 @@ import { CalculoComponent } from './components/calculo/calculo.component';
   declarations: [
     AppComponent,
     HomeComponent,
-    CalculoComponent
+    CalculoComponent,
+    InicioComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
+    ReactiveFormsModule,
     FormsModule,
     AppRoutingModule
    
