@@ -33,7 +33,11 @@ export class CalculoComponent implements OnInit {
   aumentarPag(){
     let cantidad = ++this.pags
     let total = cantidad * 500
-    console.log(total)
+    // if(this.cantidadesForm.value == this.idiomas){
+    //   let cantidad = ++this.pags
+    //   let total = cantidad * 500
+    // }
+    console.log(this.total)
     return total
   }
      disminuirPags(){

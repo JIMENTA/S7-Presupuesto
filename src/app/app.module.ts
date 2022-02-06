@@ -11,6 +11,8 @@ import { CalculoComponent } from './components/calculo/calculo.component';
 import { InicioComponent } from './components/inicio/inicio.component';
 import { RouterModule, Routes } from '@angular/router';
 
+
+
 const routes: Routes = [
   {
     path:'',
@@ -33,16 +35,19 @@ const routes: Routes = [
     AppComponent,
     HomeComponent,
     CalculoComponent,
-    InicioComponent
+    InicioComponent,
+  
   ],
   imports: [
+    
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
     RouterModule.forRoot(routes),
-    AppRoutingModule
+    AppRoutingModule,
+
    
   ],
   providers: [],
