@@ -1,12 +1,18 @@
-<form [formGroup]="cantidadesForm" (ngSubmit)="calculoExtras()">
-    <div>
-        <label>Cantidad de pagina: </label>
-        <button id="aumentarPag" (click)="aumentarPag()">+</button> <input id="cantidadPag" formControlName="paginas" type="text" value="{{ pags }}">
-        <button id="disminuirPags" (click)="disminuirPags()">-</button>
-    </div>
-    <div>
-        <label>Cantidad de idiomas: </label>
-        <button id="aumentarIdiomas" (click)="aumentarIdiomas()">+</button> <input id="cantidad" formControlName="idiomas" type="text" value="{{ idiomas }}"><button id="disminuirIdiomas" (click)="disminuirIdiomas()">-</button>
-    </div>
-    {{ cantidadesForm.value | json }}
-</form>
+<div class="container">
+    <form [formGroup]="cantidadesForm" (ngSubmit)="calculoExtras()">
+
+        <div class="container">
+            <label>Cantidad de pagina: </label>
+            <button id="aumentarPag" (click)="aumentarPag()">+</button>
+            <input id="cantidadPag" formControlName="paginas" type="text" value="{{ pags }}">
+            <button id="disminuirPags" (click)="disminuirPags()">-</button>
+        </div>
+        <div class="container">
+            <label>Cantidad de idiomas: </label>
+            <button id="aumentarIdiomas" (click)="aumentarIdiomas()">+</button>
+            <input id="cantidad" formControlName="idiomas" type="text" value="{{ idiomas }}">
+            <button id="disminuirIdiomas" (click)="disminuirIdiomas()">-</button>
+        </div>
+        {{ cantidadesForm.value | json }}
+    </form>
+</div>

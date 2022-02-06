@@ -9,7 +9,23 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CalculoComponent } from './components/calculo/calculo.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+  {
+    path:'',
+    component: InicioComponent
+  },
+  {
+    path:'presupuesto',
+    component: HomeComponent 
+  },
+  {
+    path:'calculo',
+    component: CalculoComponent 
+  }
+
+];
 
 
 @NgModule({
@@ -25,6 +41,7 @@ import { InicioComponent } from './components/inicio/inicio.component';
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
+    RouterModule.forRoot(routes),
     AppRoutingModule
    
   ],

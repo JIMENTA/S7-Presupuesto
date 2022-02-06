@@ -1,0 +1,12 @@
+button {
+    background-color: tomato;
+    border-radius: 5px;
+    border-color: tomato;
+    color: #fff;
+    min-width: 1rem;
+}
+
+input {
+    border: #777;
+    max-width: 3rem;
+}
