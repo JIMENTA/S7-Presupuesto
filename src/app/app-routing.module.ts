@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
 import { InicioComponent } from './components/inicio/inicio.component';
+import { CalculoComponent } from './components/calculo/calculo.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path:'presupuesto',
     component: HomeComponent 
+  },
+  {
+    path:'calculo',
+    component: CalculoComponent 
   }
 
 ];

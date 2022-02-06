@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+
 
 @Component({
   selector: 'app-calculo',
@@ -8,21 +9,53 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class CalculoComponent implements OnInit {
 
-  cantidadesForm : FormGroup
-  suma = 0;
+  // cantidadesForm = new FormGroup ({
+  //  paginas : new FormControl(''),
+  //  idiomas :new FormControl('')
+  // })
+  pags = 0;
+  idiomas = 0;
+  cantidad = 0;
+  total = 0;
+  cantidadesForm: FormGroup;
 
   constructor(private builder: FormBuilder) { 
     this.cantidadesForm = this.builder.group({
-      paginas:[1],
-      idiomas:[1]
+      paginas:[],
+      idiomas:[]
     })
   }
 
   ngOnInit(): void {
   }
- 
-  calculoExtras(values){
-   console.log(values.paginas)
-     //   console.log((this.cantidadesForm.get('cantidad').value * this.cantidadesForm.get('idioma').value)*30)
+
+
+  aumentarPag(){
+    let cantidad = ++this.pags
+    let total = cantidad * 500
+    console.log(total)
+    return total
   }
+     disminuirPags(){
+      let cantidad = --this.pags
+      let total = cantidad * 500
+      console.log(total)
+      return total
+     }
+    aumentarIdiomas(){
+      let cantidad = ++this.idiomas
+      let total = cantidad * 30
+      console.log(total)
+      return total
+    }
+
+   disminuirIdiomas(){
+    let cantidad = --this.idiomas
+    let total = cantidad * 30
+    console.log(total)
+    return total
+   }
+   calculoExtras(){
+     console.log(this.cantidad * this.total)
+   }
 }
