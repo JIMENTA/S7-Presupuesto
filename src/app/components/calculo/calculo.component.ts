@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component,  Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+
 
 
 @Component({
@@ -7,16 +8,16 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   templateUrl: './calculo.component.html',
   styleUrls: ['./calculo.component.css']
 })
-export class CalculoComponent implements OnInit {
+export class CalculoComponent  {
+ 
+  @Output () calculo : EventEmitter<number> = new EventEmitter();
 
-  // cantidadesForm = new FormGroup ({
-  //  paginas : new FormControl(''),
-  //  idiomas :new FormControl('')
-  // })
-  pags = 0;
-  idiomas = 0;
-  cantidad = 0;
-  total = 0;
+  total:number = 0;
+  pags:number = 500;
+  idiomas:number = 30;
+  cantidadPags:number = 0;
+  cantidadIdiomas:number =0;
+
   cantidadesForm: FormGroup;
 
   constructor(private builder: FormBuilder) { 
@@ -25,41 +26,36 @@ export class CalculoComponent implements OnInit {
       idiomas:[]
     })
   }
+ // cantidadesForm = new FormGroup ({
+  //  paginas : new FormControl(''),
+  //  idiomas :new FormControl('')
+  // })
 
-  ngOnInit(): void {
-  }
 
 
-  aumentarPag(){
-    let cantidad = ++this.pags
-    let total = cantidad * 500
-    // if(this.cantidadesForm.value == this.idiomas){
-    //   let cantidad = ++this.pags
-    //   let total = cantidad * 500
-    // }
+  aumentoPags(valor:number){
+    this.total += valor;
+    this.cantidadPags++
     console.log(this.total)
-    return total
   }
-     disminuirPags(){
-      let cantidad = --this.pags
-      let total = cantidad * 500
-      console.log(total)
-      return total
-     }
-    aumentarIdiomas(){
-      let cantidad = ++this.idiomas
-      let total = cantidad * 30
-      console.log(total)
-      return total
-    }
+  disminuirPags(valor:number){
+    this.total += valor;
+    this.cantidadPags--
+    console.log(this.total)
+  }
+  aumentarIdiomas(valor:number){
+    this.total += valor;
+    this.cantidadIdiomas++
+    console.log(this.total)
+  }
+  disminuirIdiomas(valor:number){
+    this.total += valor;
+    this.cantidadIdiomas--
+    console.log(this.total)
+  }
 
-   disminuirIdiomas(){
-    let cantidad = --this.idiomas
-    let total = cantidad * 30
-    console.log(total)
-    return total
-   }
-   calculoExtras(){
-     console.log(this.cantidad * this.total)
-   }
+  calculoExtras(){
+    this.calculo.emit(this.total)
+    return this.total  
+  }
 }
