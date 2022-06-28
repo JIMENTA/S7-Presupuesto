@@ -1,13 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Orders } from 'src/app/interfaces/orders.interface';
-import { PanelService } from 'src/app/services/panel.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   
   orders : Orders[]= [
     {id:1, task: 'Una pagina web (500€)', price: 500, selected: false},
@@ -16,18 +15,19 @@ export class HomeComponent implements OnInit {
   ];
 
   total = 0
+  seo:number = 300; 
+  ads:number = 200;
 
-  constructor( private miServicio : PanelService) { }
+  sumaTotal(sumaSub : number){
+    this.total = sumaSub
+    console.log(this.total)
+    return this.total
+  }
 
-  ngOnInit(): void {
+
+  suma(sumaSub : number){
+    this.total+= sumaSub
+    return this.total
   }
-  sumarATotal(e){
-  this.total += 1;
-  console.log(e)
-  }
-  
-  calcular(event){
-    this.miServicio.addToBudget(event)
-    
-  }
+
 }

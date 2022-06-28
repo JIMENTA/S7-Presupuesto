@@ -1,10 +1,7 @@
-<!-- <button (click)="aumentoPags(pags)">+1</button>
-<span>{{ cantidad }}</span>
-<button (click)="disminuirPags(-pags)">-1</button> -->
-
 <br>
+
 <div class="container">
-    <form [formGroup]="cantidadesForm" (ngSubmit)="calculoExtras()">
+    <form [formGroup]="cantidadesForm" (ngSubmit)="calculoExtras(subtotal)">
 
         <div class="container">
             <label>Cantidad de pagina: </label>
@@ -19,6 +16,6 @@
             <button id="disminuirIdiomas" (click)="disminuirIdiomas(-idiomas)">-</button>
         </div>
 
-        <div>{{ total}}</div>
+        <div>{{ subtotal}}</div>
     </form>
 </div>

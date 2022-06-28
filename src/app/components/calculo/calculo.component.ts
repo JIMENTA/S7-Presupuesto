@@ -1,5 +1,6 @@
-import { Component,  Output, EventEmitter } from '@angular/core';
+import { Component,  Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Orders } from 'src/app/interfaces/orders.interface';
 
 
 
@@ -9,14 +10,15 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./calculo.component.css']
 })
 export class CalculoComponent  {
- 
+
   @Output () calculo : EventEmitter<number> = new EventEmitter();
 
-  total:number = 0;
+  subtotal:number = 0;
   pags:number = 500;
   idiomas:number = 30;
   cantidadPags:number = 0;
   cantidadIdiomas:number =0;
+
 
   cantidadesForm: FormGroup;
 
@@ -26,36 +28,28 @@ export class CalculoComponent  {
       idiomas:[]
     })
   }
- // cantidadesForm = new FormGroup ({
-  //  paginas : new FormControl(''),
-  //  idiomas :new FormControl('')
-  // })
 
 
 
   aumentoPags(valor:number){
-    this.total += valor;
+    this.subtotal += valor;
     this.cantidadPags++
-    console.log(this.total)
   }
   disminuirPags(valor:number){
-    this.total += valor;
+    this.subtotal += valor;
     this.cantidadPags--
-    console.log(this.total)
   }
   aumentarIdiomas(valor:number){
-    this.total += valor;
+    this.subtotal += valor;
     this.cantidadIdiomas++
-    console.log(this.total)
   }
   disminuirIdiomas(valor:number){
-    this.total += valor;
+    this.subtotal += valor;
     this.cantidadIdiomas--
-    console.log(this.total)
   }
 
-  calculoExtras(){
-    this.calculo.emit(this.total)
-    return this.total  
+  calculoExtras(subtotal:number){
+    this.calculo.emit(this.subtotal)
+    return this.subtotal  
   }
 }

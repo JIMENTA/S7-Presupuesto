@@ -1,17 +1,18 @@
 <div class="container">
     <h3>Que quieres hacer?</h3>
-    <mat-checkbox #checkPag id=1 color="primary" (change)="calcular($event)">
+    <mat-checkbox #checkPag id=1 color="primary" (click)="suma(total)">
         <div>Una pagina web (500€)</div>
     </mat-checkbox>
+    <app-calculo *ngIf="checkPag.checked" (calculo)="sumaTotal($event)"></app-calculo>
     <br>
 
-    <app-calculo *ngIf="checkPag.checked" (calculo)="sumarATotal($event)"></app-calculo>
 
-    <mat-checkbox #checkSEO id=2 color="primary" (change)="calcular($event)">
+
+    <mat-checkbox #checkSEO id=2 color="primary" (click)="suma(seo)">
         <div>Una consultoria SEO (300€)</div>
     </mat-checkbox>
     <br>
-    <mat-checkbox color="primary" (change)="calcular($event)">
+    <mat-checkbox color="primary" (click)="suma(ads)">
         <div>Una campaña de Google Ads (200€)</div>
     </mat-checkbox>
     <hr>
